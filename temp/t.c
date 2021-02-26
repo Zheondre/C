@@ -1,10 +1,15 @@
 #include <stdio.h>
-#include <stdbool.h> 
+#include <stdlib.h>
 
-#include "t.c"
-
-node *n;
+#include "t.h"
 /*
+int getnum(){ 
+
+return 5 ;
+}
+*/
+//node *n;
+
 node* getNode(){  
   return n;
 } 
@@ -14,9 +19,9 @@ void nodeNumIncrease(){
 void nodeNumDecrease(){ 
   n->num--;
 }
-void nodeStatusUpdate();
+void nodeStatusUpdate(){
 
-if(status) 
+if(n->status) 
   n->status = false; 
  else 
    n->status = true; 
@@ -29,15 +34,17 @@ node *createNode() {
   else { 
     n = (node*)malloc(sizeof(node)); 
     
-    n->num = 0; 
+    n->num = -1; 
     n->status = false;
-    n->increaseNum = nodeNumIncrease();
-    n->decreaseNum = nodeNumDecrease();
-    n->statusUpdate = nodeStatusUpdate();
-    n->inst = getNode(); 
+    n->increaseNum = nodeNumIncrease;
+    n->decreaseNum = nodeNumDecrease;
+    n->statusUpdate = nodeStatusUpdate;
+    //n->inst = getNode(); 
     //n->this = n;
     return n; 
   }
 }
 
-*/
+//*/
+
+

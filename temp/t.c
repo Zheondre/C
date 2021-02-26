@@ -2,24 +2,46 @@
 #include <stdlib.h>
 
 #include "t.h"
-/*
-int getnum(){ 
 
-return 5 ;
-}
+ struct NODE{ 
+
+  int num; 
+  bool status;
+  int x; 
+
+/*   void (* increaseNum)(); 
+  void (* decreaseNum)(); 
+  void (* statusUpdate)(); 
+  void (* incX)();
 */
-//node *n;
+ //struct NODE*  (* inst)(); 
+
+};
+
+static node *n;
 
 node* getNode(){  
   return n;
-} 
-void nodeNumIncrease(){ 
+}
+
+ void incX(){ 
+n->x++;
+}  
+
+ int getNum(){ 
+return n->num; 
+}
+ int getX(){ 
+return n->x;
+}
+
+ void nodeNumIncrease(){ 
   n->num++; 
 }
-void nodeNumDecrease(){ 
+ void nodeNumDecrease(){ 
   n->num--;
 }
-void nodeStatusUpdate(){
+ void nodeStatusUpdate(){
 
 if(n->status) 
   n->status = false; 
@@ -36,15 +58,16 @@ node *createNode() {
     
     n->num = -1; 
     n->status = false;
+    n->x = 87; 
+
+/* 
+    n->incX = incX;
     n->increaseNum = nodeNumIncrease;
     n->decreaseNum = nodeNumDecrease;
     n->statusUpdate = nodeStatusUpdate;
-    //n->inst = getNode(); 
-    //n->this = n;
+*/
     return n; 
   }
 }
-
-//*/
 
 
